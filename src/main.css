@@ -1,0 +1,82 @@
+@font-face {
+  font-family: brownsugar;
+  src: url("./assets/BrownSugar.ttf");
+}
+.first {
+  opacity: 0.8;
+
+  min-height: 100vh;
+  background: url("./assets/back.JPEG") no-repeat;
+  background-size: cover;
+  background-position: 25%;
+  vertical-align: middle;
+}
+body {
+  margin: 0;
+}
+.names-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+}
+.names {
+  font-family: brownsugar, serif;
+  margin: 0;
+  font-size: 2.3em;
+}
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.color-cornsilk {
+  color: cornsilk;
+}
+.black-shadow {
+  text-shadow: 1px 1px 2px black;
+}
+.color-black {
+  color: black;
+}
+.cornsilk-shadow {
+  text-shadow: 1px 1px 2px cornsilk;
+}
+h3 {
+  margin: 0;
+}
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.greet {
+  padding-top: 4em;
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+.date {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.time {
+  padding-top: 2em;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.date-light {
+  font-size: 1.3em;
+  font-weight: 400;
+  padding-top: 10px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
