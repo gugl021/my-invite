@@ -10,6 +10,7 @@
   background-size: cover;
   background-position: 25%;
   vertical-align: middle;
+  border-radius: 20px;
 }
 body {
   margin: 0;
@@ -79,4 +80,24 @@ h3 {
 .column {
   display: flex;
   flex-direction: column;
+}
+.green-wrapper {
+  padding: 0.5em;
+  background-color: rgba(212, 155, 113, 0.8);
+}
+
+.how-to-wrapper {
+  margin-top: 0.5em;
+  background-color: cornsilk;
+  opacity: 0.6;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.map {
+  opacity: 0.8;
+  margin-top: 0.5em;
+  width: calc(100vw - 1em);
+  overflow: hidden;
+  border-radius: 20px;
 }

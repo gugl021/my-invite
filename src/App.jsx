@@ -241,7 +241,7 @@ function App() {
   return (
     <>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-        <div className={"column"}>
+        <div className={"green-wrapper column"}>
           <div className={"first"}>
             <div className={"center color-cornsilk black-shadow  cormorant-garamond-regular greet"}>
               <span>Sa radošću te pozivamo da prisustvuješ našem venčanju</span>
@@ -265,9 +265,9 @@ function App() {
               <span>Čin sklapanja braka u 17:30</span>
             </div>
           </div>
-          <div className={"second"}>
+          <div className={"map"}>
             <Map
-              style={{ width: "100vw", height: "300px" }}
+              style={{ width: "100%", height: "300px" }}
               defaultCenter={{ lat: 45.2497041, lng: 19.8677662 }}
               defaultZoom={17}
               gestureHandling={"greedy"}
