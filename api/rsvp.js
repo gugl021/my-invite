@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       await fs.writeFile(filePath, JSON.stringify(data, null, 2));
       res.status(200).json({ message: "Data written to file" });
     } catch (error) {
-      res.status(500).json({ error: "Failed to write data to file" });
+      res.status(500).json({ error: error + " Failed to write data to file" });
     }
   } else {
     res.status(405).json({ message: "Method not allowed" });
