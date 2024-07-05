@@ -7,11 +7,11 @@ import { start } from "./pettles.js";
 
 function App() {
   useEffect(() => start(), []);
-  const name = spisak[location.pathname.substring(1)]?.name;
-  const gender = spisak[location.pathname.substring(1)]?.gender;
-  const isEnglish = Boolean(spisak[location.pathname.substring(1)]?.english);
-  const isSpanish = Boolean(spisak[location.pathname.substring(1)]?.spanish);
-  const isPlural = Boolean(spisak[location.pathname.substring(1)]?.plural);
+  const name = spisak[location.hash.substring(2)]?.name;
+  const gender = spisak[location.hash.substring(2)]?.gender;
+  const isEnglish = Boolean(spisak[location.hash.substring(2)]?.english);
+  const isSpanish = Boolean(spisak[location.hash.substring(2)]?.spanish);
+  const isPlural = Boolean(spisak[location.hash.substring(2)]?.plural);
   const [data, setData] = React.useState(null);
   //eslint-disable-next-line no-unused-vars
   const [error, setError] = React.useState(null);
@@ -22,9 +22,9 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...data, [location.pathname.substring(1)]: value }),
+        body: JSON.stringify({ ...data, [location.hash.substring(2)]: value }),
       }),
-    []
+    [data]
   );
 
   const fetchData = React.useCallback(async () => {
@@ -41,12 +41,13 @@ function App() {
   }, []);
 
   /*React.useEffect(() => console.log(rsvp), [rsvp]);
-
+   */
   React.useEffect(() => {
     fetchData();
   }, []);
-  React.useEffect(() => console.log(data), [data]);*/
+  // React.useEffect(() => console.log(data), [data]);
 
+  // console.log(location.hash.substring(2), name, gender);
   return (
     <>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
@@ -106,7 +107,7 @@ function App() {
                   id="da"
                   name="drone"
                   value="da"
-                  checked={data?.[location.pathname.substring(1)] === "da"}
+                  checked={data?.[location.hash.substring(2)] === "da"}
                 />
                 <label htmlFor="da">Da</label>
               </div>
@@ -122,7 +123,7 @@ function App() {
                   id="neodlučeni"
                   name="drone"
                   value="neodlučeni"
-                  checked={data?.[location.pathname.substring(1)] === "neodlučeni"}
+                  checked={data?.[location.hash.substring(2)] === "neodlučeni"}
                 />
                 <label htmlFor="neodlučeni">Neodlučeni</label>
               </div>
@@ -138,7 +139,7 @@ function App() {
                   id="ne"
                   name="drone"
                   value="ne"
-                  checked={data?.[location.pathname.substring(1)] === "ne"}
+                  checked={data?.[location.hash.substring(2)] === "ne"}
                 />
                 <label htmlFor="ne">Ne</label>
               </div>
