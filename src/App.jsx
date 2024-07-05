@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./main.css";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
+import { spisak } from "./spisak.js";
 ("use strict");
 
 function start() {
@@ -238,13 +239,29 @@ function start() {
 
 function App() {
   useEffect(() => start(), []);
+  const name = spisak[location.pathname.substring(1)]?.name;
+  const gender = spisak[location.pathname.substring(1)]?.gender;
+  const isEnglish = Boolean(spisak[location.pathname.substring(1)]?.english);
+  const isSpanish = Boolean(spisak[location.pathname.substring(1)]?.spanish);
+  const isPlural = Boolean(spisak[location.pathname.substring(1)]?.plural);
   return (
     <>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
         <div className={"green-wrapper column"}>
           <div className={"first"}>
-            <div className={"center color-cornsilk black-shadow  cormorant-garamond-regular greet"}>
-              <span>Sa radošću te pozivamo da prisustvuješ našem venčanju</span>
+            <div className={"center greet"}>
+              <h2 className={"color-cornsilk black-shadow cormorant-garamond-regular"}>
+                {gender} {name}
+              </h2>
+            </div>
+            <div className={"center color-cornsilk black-shadow cormorant-garamond-regular "}>
+              <span className={"cormorant-garamond-regular"}>
+                {isEnglish
+                  ? "We happily invite you to out wedding."
+                  : isSpanish
+                    ? "nos complace invitarlos a nuestra boda."
+                    : `Sa radošću ${isPlural ? "vas" : "te"} pozivamo da ${isPlural ? "prisustvujete" : "prisustvuješ"} našem venčanju.`}
+              </span>
             </div>
             <div className={"names-wrapper"}>
               <h2 className={"names color-cornsilk black-shadow"}>Aleksandra</h2>
@@ -252,9 +269,6 @@ function App() {
               <h2 className={"names color-cornsilk black-shadow"}>&</h2>
               <br />
               <h2 className={"names color-cornsilk black-shadow"}>Goran</h2>
-            </div>
-            <div className={"center color-cornsilk black-shadow cormorant-garamond-regular date"}>
-              <span>Zabeležite datum!</span>
             </div>
             <div className={"center column color-cornsilk black-shadow cormorant-garamond-regular uppercase date-light"}>
               <span>Subota, 31. avgust 2024.</span>

@@ -1,10 +1,12 @@
 @font-face {
   font-family: brownsugar;
-  src: url("./assets/BrownSugar.ttf");
+  src: url("./assets/fonts/BrownSugar.ttf");
+}
+@font-face {
+  font-family: "Cormorant Garamond", serif;
+  src: url("./assets/fonts/CormorantGaramond-Regular.ttf");
 }
 .first {
-  opacity: 0.8;
-
   min-height: 100vh;
   background: url("./assets/back.JPEG") no-repeat;
   background-size: cover;
