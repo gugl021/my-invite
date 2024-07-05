@@ -8,9 +8,9 @@
 }
 .first {
   min-height: 100vh;
-  background: url("./assets/back.JPEG") no-repeat;
+  background: url("./assets/bg.png") no-repeat;
   background-size: cover;
-  background-position: 25%;
+  background-position: 25% 0;
   vertical-align: middle;
   border-radius: 20px;
 }
@@ -102,4 +102,10 @@ h3 {
   width: calc(100vw - 1em);
   overflow: hidden;
   border-radius: 20px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
