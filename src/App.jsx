@@ -94,58 +94,57 @@ function App() {
               <Marker onClick={() => window.open("https://maps.app.goo.gl/whn5pmcSryLUrjC59")} position={{ lat: 45.249519, lng: 19.869372 }} />
             </Map>
           </div>
-          {data ? (
-            <div className={"row"}>
-              <div>
-                <input
-                  onChange={async (event) => {
-                    if (event.target.checked) {
-                      await post("da");
-                      fetchData();
-                    }
-                  }}
-                  type="radio"
-                  id="da"
-                  name="drone"
-                  value="da"
-                  checked={data?.[location.hash.substring(2)] === "da"}
-                />
-                <label htmlFor="da">Da</label>
-              </div>
-              <div>
-                <input
-                  onChange={async (event) => {
-                    if (event.target.checked) {
-                      await post("neodlučeni");
-                      fetchData();
-                    }
-                  }}
-                  type="radio"
-                  id="neodlučeni"
-                  name="drone"
-                  value="neodlučeni"
-                  checked={data?.[location.hash.substring(2)] === "neodlučeni"}
-                />
-                <label htmlFor="neodlučeni">Neodlučeni</label>
-              </div>
-              <div>
-                <input
-                  onChange={async (event) => {
-                    if (event.target.checked) {
-                      await post("ne");
-                      fetchData();
-                    }
-                  }}
-                  type="radio"
-                  id="ne"
-                  name="drone"
-                  value="ne"
-                  checked={data?.[location.hash.substring(2)] === "ne"}
-                />
-                <label htmlFor="ne">Ne</label>
-              </div>
+          <div className={"row"}>
+            <div>
+              <input
+                onChange={async (event) => {
+                  if (event.target.checked) {
+                    await post("da");
+                    fetchData();
+                  }
+                }}
+                type="radio"
+                id="da"
+                name="drone"
+                value="da"
+                checked={data?.[location.hash.substring(2)] === "da"}
+              />
+              <label htmlFor="da">Da</label>
             </div>
-          ) : null}
+            <div>
+              <input
+                onChange={async (event) => {
+                  if (event.target.checked) {
+                    await post("neodlučeni");
+                    fetchData();
+                  }
+                }}
+                type="radio"
+                id="neodlučeni"
+                name="drone"
+                value="neodlučeni"
+                checked={data?.[location.hash.substring(2)] === "neodlučeni"}
+              />
+              <label htmlFor="neodlučeni">Neodlučeni</label>
+            </div>
+            <div>
+              <input
+                onChange={async (event) => {
+                  if (event.target.checked) {
+                    await post("ne");
+                    fetchData();
+                  }
+                }}
+                type="radio"
+                id="ne"
+                name="drone"
+                value="ne"
+                checked={data?.[location.hash.substring(2)] === "ne"}
+              />
+              <label htmlFor="ne">Ne</label>
+            </div>
+          </div>
+          )
         </div>
       </APIProvider>
     </>
