@@ -3,7 +3,7 @@ import path from "path";
 
 export default async function handler(req, res) {
   // eslint-disable-next-line no-undef
-  const filePath = path.join(process.cwd(), "data.json");
+  const filePath = path.join(process.cwd(), "tmp/data.json");
 
   if (req.method === "GET") {
     try {
