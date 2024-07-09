@@ -1,25 +1,5 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { put, list, del } from "@vercel/blob";
-
-async function deleteAllBlobs() {
-  let cursor;
-
-  do {
-    const listResult = await list({
-      cursor,
-      limit: 1000,
-    });
-
-    if (listResult.blobs.length > 0) {
-      await del(listResult.blobs.map((blob) => blob.url));
-    }
-
-    cursor = listResult.cursor;
-  } while (cursor);
-
-  console.log("All blobs were deleted");
-}
 
 export default async function handler(req, res) {
   // eslint-disable-next-line no-undef
@@ -29,22 +9,13 @@ export default async function handler(req, res) {
     try {
       const fileContents = await fs.readFile(filePath, "utf-8");
       const data = JSON.parse(fileContents);
-      const listResult = await list({
-        cursor: "expanded",
-        limit: 1000,
-      });
-      res.status(200).json({ ...data, list: listResult });
+      res.status(200).json({ ...data });
     } catch (error) {
       res.status(500).json({ error: "Failed to read data from file" });
     }
   } else if (req.method === "POST") {
     try {
       const data = req.body;
-
-      await deleteAllBlobs().catch((error) => {
-        console.error("An error occurred:", error);
-      });
-      const { url } = await put("articles/blob.txt", "Hello World!", { access: "public" });
       await fs.writeFile(filePath, JSON.stringify(data, null, 2));
       res.status(200).json({ message: "Data written to file" });
     } catch (error) {
