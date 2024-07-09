@@ -1,9 +1,9 @@
 import { promises as fs } from "fs";
-import path from "path";
+// import path from "path";
 
 export default async function handler(req, res) {
   // eslint-disable-next-line no-undef
-  const filePath = path.join(process.cwd(), "tmp/data.json");
+  const filePath = "tmp/data.json";
 
   if (req.method === "GET") {
     try {
