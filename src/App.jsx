@@ -17,25 +17,36 @@ function App() {
   //eslint-disable-next-line no-unused-vars
   const [error, setError] = React.useState(null);
   const post = React.useCallback(
-    async (value) =>
-      fetch("/api/rsvp", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...data, [location.hash.substring(2)]: value }),
-      }),
+    async (value) => {
+      let req = new XMLHttpRequest();
+      /*req.onreadystatechange = () => {
+        if (req.readyState == XMLHttpRequest.DONE) {
+          console.log(req.responseText);
+          debugger;
+        }
+      };*/
+      req.open("PUT", "https://api.jsonbin.io/v3/b/668d00e6ad19ca34f88505b6", true);
+      req.setRequestHeader("Content-Type", "application/json");
+      req.setRequestHeader("X-Master-Key", "$2a$10$Pu6vPXlvxXKLNX5C0gfLge5IRH9WHFnj3gm0DuXnvpiFgDF.mKVk2");
+      req.send(JSON.stringify({ ...data, [location.hash.substring(2)]: value }));
+    },
     [data]
   );
 
   const fetchData = React.useCallback(async () => {
     try {
-      const response = await fetch("/api/rsvp");
+      const response = await fetch("https://api.jsonbin.io/v3/b/668d00e6ad19ca34f88505b6", {
+        headers: {
+          "X-MASTER-KEY": "$2a$10$Pu6vPXlvxXKLNX5C0gfLge5IRH9WHFnj3gm0DuXnvpiFgDF.mKVk2",
+          "X-ACCESS-KEY": "$2a$10$BQ6uU9SmifziXVrwVgHcceSD1K0kvghMnRkaG4ECg/fE7yIzGNLjq",
+        },
+      });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const result = await response.json();
-      setData(result);
+      console.log(result);
+      setData(result.record);
     } catch (error) {
       setError(error.message);
     }
@@ -144,7 +155,6 @@ function App() {
               <label htmlFor="ne">Ne</label>
             </div>
           </div>
-          )
         </div>
       </APIProvider>
     </>

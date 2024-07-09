@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 
 export default async function handler(req, res) {
   // eslint-disable-next-line no-undef
-  const filePath = "tmp/data.json";
+  const filePath = "data.json";
 
   if (req.method === "GET") {
     try {
