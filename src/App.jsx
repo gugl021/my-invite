@@ -22,7 +22,6 @@ function App() {
       let req = new XMLHttpRequest();
       /*req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {
-          console.log(req.responseText);
           debugger;
         }
       };*/
