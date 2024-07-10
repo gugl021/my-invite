@@ -45,21 +45,16 @@ function App() {
         throw new Error("Network response was not ok");
       }
       const result = await response.json();
-      console.log(result);
       setData(result.record);
     } catch (error) {
       setError(error.message);
     }
   }, []);
 
-  /*React.useEffect(() => console.log(rsvp), [rsvp]);
-   */
   React.useEffect(() => {
     fetchData();
   }, []);
-  // React.useEffect(() => console.log(data), [data]);
 
-  // console.log(location.hash.substring(2), name, gender);
   return (
     <>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
