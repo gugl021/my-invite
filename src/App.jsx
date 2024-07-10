@@ -14,6 +14,7 @@ function App() {
   const isSpanish = Boolean(spisak[location.hash.substring(2)]?.spanish);
   const isPlural = Boolean(spisak[location.hash.substring(2)]?.plural);
   const [data, setData] = React.useState(null);
+  const [tempRSVP, setTempRSVP] = React.useState(null);
   //eslint-disable-next-line no-unused-vars
   const [error, setError] = React.useState(null);
   const post = React.useCallback(
@@ -52,43 +53,110 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    fetchData();
-  }, []);
+    void fetchData();
+  }, [fetchData]);
 
   return (
     <>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
         <div className={"green-wrapper column"}>
           <div className={"first"}>
-            <div className={"center greet"}>
-              <h2 className={"color-cornsilk black-shadow cormorant-garamond-regular"}>
+            <div className={"center column greet"}>
+              <h2 className={"color-cornsilk black-shadow Merriweather"}>
                 {gender} {name}
               </h2>
+              <div className={"center sub-greet color-cornsilk black-shadow Merriweather "}>
+                <span className={"Merriweather"}>
+                  {isEnglish
+                    ? "We happily invite you to out wedding."
+                    : isSpanish
+                      ? "nos complace invitarlos a nuestra boda."
+                      : `Sa radošću ${isPlural ? "vas" : "te"} pozivamo da ${isPlural ? "prisustvujete" : "prisustvuješ"} našem venčanju.`}
+                </span>
+              </div>
             </div>
-            <div className={"center color-cornsilk black-shadow cormorant-garamond-regular "}>
-              <span className={"cormorant-garamond-regular"}>
-                {isEnglish
-                  ? "We happily invite you to out wedding."
-                  : isSpanish
-                    ? "nos complace invitarlos a nuestra boda."
-                    : `Sa radošću ${isPlural ? "vas" : "te"} pozivamo da ${isPlural ? "prisustvujete" : "prisustvuješ"} našem venčanju.`}
-              </span>
-            </div>
+
             <div className={"names-wrapper"}>
               <h2 className={"names color-cornsilk black-shadow"}>Aleksandra</h2>
-              <br />
               <h2 className={"names color-cornsilk black-shadow"}>&</h2>
-              <br />
               <h2 className={"names color-cornsilk black-shadow"}>Goran</h2>
             </div>
-            <div className={"center column color-cornsilk black-shadow cormorant-garamond-regular uppercase date-light"}>
+            <div className={"center column color-cornsilk black-shadow Merriweather uppercase date-light"}>
               <span>Subota, 31. avgust 2024.</span>
               <span>Petrovaradinska tvrđava, Atelje 21</span>
             </div>
-            <div className={"center column color-cornsilk black-shadow cormorant-garamond-regular time"}>
+            <div className={"center column color-cornsilk black-shadow Merriweather time"}>
               <span>Okupljanje gostiju u 16h</span>
               <span>Čin sklapanja braka u 17:30</span>
             </div>
+            <div className={"column rsvp-wrapper"}>
+              <h3 className={"center color-cornsilk black-shadow Merriweather"}>
+                {isEnglish ? "Please RSVP" : isSpanish ? "Por favor RSVP" : `Molimo vas da ${isPlural ? "potvrdite" : "potvrdiš"} dolazak do 10. avgusta`}
+              </h3>
+              <div className={"row rsvp"}>
+                <div>
+                  <input
+                    onChange={async (event) => {
+                      if (event.target.checked && data?.[location.hash.substring(2)] !== "da") {
+                        setTempRSVP("da");
+                        setData({ ...data, [location.hash.substring(2)]: "da" });
+                        await post("da");
+                        return fetchData();
+                      }
+                    }}
+                    type="radio"
+                    id="da"
+                    name="drone"
+                    value="da"
+                    checked={tempRSVP === "da" ? true : data?.[location.hash.substring(2)] === "da"}
+                  />
+                  <label className={"Merriweather"} htmlFor="da">
+                    {isEnglish ? "Yes" : isSpanish ? "Si" : "Da"}
+                  </label>
+                </div>
+                <div>
+                  <input
+                    onChange={async (event) => {
+                      if (event.target.checked && data?.[location.hash.substring(2)] !== "neodlučeni") {
+                        setTempRSVP("neodlučeni");
+                        setData({ ...data, [location.hash.substring(2)]: "neodlučeni" });
+                        await post("neodlučeni");
+                        return fetchData();
+                      }
+                    }}
+                    type="radio"
+                    id="neodlučeni"
+                    name="drone"
+                    value="neodlučeni"
+                    checked={tempRSVP === "neodlučeni" ? true : data?.[location.hash.substring(2)] === "neodlučeni"}
+                  />
+                  <label className={"Merriweather"} htmlFor="neodlučeni">
+                    {isEnglish ? "Undecided" : isSpanish ? "indeciso" : isPlural ? "Neodlučeni" : "Neodlučen"}
+                  </label>
+                </div>
+                <div>
+                  <input
+                    onChange={async (event) => {
+                      if (event.target.checked && data?.[location.hash.substring(2)] !== "ne") {
+                        setTempRSVP("ne");
+                        setData({ ...data, [location.hash.substring(2)]: "ne" });
+                        await post("ne");
+                        return fetchData();
+                      }
+                    }}
+                    type="radio"
+                    id="ne"
+                    name="drone"
+                    value="ne"
+                    checked={tempRSVP === "ne" ? true : data?.[location.hash.substring(2)] === "ne"}
+                  />
+                  <label className={"Merriweather"} htmlFor="ne">
+                    {isEnglish ? "No" : isSpanish ? "No" : "Ne"}
+                  </label>
+                </div>
+              </div>
+            </div>
+            {/*<span style={{ color: "white" }}>{tempRSVP}</span>*/}
           </div>
           <div className={"map"}>
             <Map
@@ -99,59 +167,6 @@ function App() {
               disableDefaultUI={true}>
               <Marker onClick={() => window.open("https://maps.app.goo.gl/whn5pmcSryLUrjC59")} position={{ lat: 45.249519, lng: 19.869372 }} />
             </Map>
-          </div>
-          <div className={"row"}>
-            <div>
-              <input
-                onChange={async (event) => {
-                  if (event.target.checked) {
-                    await post("da");
-                    fetchData();
-                  }
-                }}
-                type="radio"
-                id="da"
-                name="drone"
-                value="da"
-                checked={data?.[location.hash.substring(2)] === "da"}
-              />
-              <label htmlFor="da">{isEnglish ? "Yes" : isSpanish ? "Si" : "Da"}</label>
-            </div>
-            <div>
-              <input
-                onChange={async (event) => {
-                  if (event.target.checked) {
-                    await post("neodlučeni");
-                    fetchData();
-                  }
-                }}
-                type="radio"
-                id="neodlučeni"
-                name="drone"
-                value="neodlučeni"
-                checked={data?.[location.hash.substring(2)] === "neodlučeni"}
-              />
-              <label htmlFor="neodlučeni">
-                {" "}
-                <label htmlFor="neodlučeni">{isEnglish ? "Undecided" : isSpanish ? "indeciso" : isPlural ? "Neodlučeni" : "Neodlučen"}</label>
-              </label>
-            </div>
-            <div>
-              <input
-                onChange={async (event) => {
-                  if (event.target.checked) {
-                    await post("ne");
-                    fetchData();
-                  }
-                }}
-                type="radio"
-                id="ne"
-                name="drone"
-                value="ne"
-                checked={data?.[location.hash.substring(2)] === "ne"}
-              />
-              <label htmlFor="ne">{isEnglish ? "No" : isSpanish ? "No" : "Ne"}</label>
-            </div>
           </div>
         </div>
       </APIProvider>

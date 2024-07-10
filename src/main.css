@@ -10,7 +10,7 @@
   min-height: 100vh;
   background: url("./assets/bg.png") no-repeat;
   background-size: cover;
-  background-position: 25% 0;
+  background-position: 35% 0;
   vertical-align: middle;
   border-radius: 20px;
 }
@@ -22,15 +22,25 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 200px;
+  height: 135px;
+  padding-top: 0.8em;
 }
 .names {
   font-family: brownsugar, serif;
   margin: 0;
   font-size: 2.3em;
 }
+.names,
+h2 {
+  margin: 0;
+}
 .cormorant-garamond-regular {
   font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.Merriweather {
+  font-family: "Merriweather", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -57,9 +67,16 @@ h3 {
   height: 100%;
 }
 .greet {
-  padding-top: 4em;
+  padding-top: 11em;
   font-size: 1.4em;
   font-weight: lighter;
+}
+.greet > h2 {
+  font-size: 1.4em;
+}
+.sub-greet > span {
+  padding-top: 0.5em;
+  font-size: 0.9em;
 }
 .date {
   font-size: 1.3em;
@@ -108,4 +125,32 @@ h3 {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+.rsvp-wrapper {
+  padding: 0.5em 0;
+  margin-top: 1.5em;
+  background-color: rgba(20, 20, 20, 0.5);
+}
+.rsvp {
+  /*padding: 0.5em;*/
+  /*margin-left: -0.5em;*/
+  height: 3em;
+  /*background-color: rgba(20, 20, 20, 0.5);*/
+  width: calc(100vw - 1em);
+  z-index: 99999;
+  /*border-radius: 20px;*/
+}
+input {
+  display: none;
+}
+
+input + label {
+  color: cornsilk;
+  z-index: 99999;
+  cursor: pointer;
+}
+
+input:checked + label {
+  text-decoration: underline;
 }
