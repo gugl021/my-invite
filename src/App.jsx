@@ -120,7 +120,7 @@ function App() {
                 value="da"
                 checked={data?.[location.hash.substring(2)] === "da"}
               />
-              <label htmlFor="da">Da</label>
+              <label htmlFor="da">{isEnglish ? "Yes" : isSpanish ? "Si" : "Da"}</label>
             </div>
             <div>
               <input
@@ -136,7 +136,10 @@ function App() {
                 value="neodlučeni"
                 checked={data?.[location.hash.substring(2)] === "neodlučeni"}
               />
-              <label htmlFor="neodlučeni">Neodlučeni</label>
+              <label htmlFor="neodlučeni">
+                {" "}
+                <label htmlFor="neodlučeni">{isEnglish ? "Undecided" : isSpanish ? "indeciso" : isPlural ? "Neodlučeni" : "Neodlučen"}</label>
+              </label>
             </div>
             <div>
               <input
@@ -152,7 +155,7 @@ function App() {
                 value="ne"
                 checked={data?.[location.hash.substring(2)] === "ne"}
               />
-              <label htmlFor="ne">Ne</label>
+              <label htmlFor="ne">{isEnglish ? "No" : isSpanish ? "No" : "Ne"}</label>
             </div>
           </div>
         </div>
