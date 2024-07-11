@@ -130,7 +130,7 @@ function App() {
                     checked={tempRSVP === "neodlučeni" ? true : data?.[location.pathname.substring(1)] === "neodlučeni"}
                   />
                   <label className={"Merriweather"} htmlFor="neodlučeni">
-                    {isEnglish ? "Undecided" : isSpanish ? "indeciso" : isPlural ? "Neodlučeni" : "Neodlučen"}
+                    {isEnglish ? "Maybe" : isSpanish ? "Tal vez" : "Možda"}
                   </label>
                 </div>
                 <div>
