@@ -1,1 +1,5 @@
-{"orgId":"team_XVYYzYpmrn9qBdyZcNJXpyce","projectId":"prj_PBcsOedSLeYfnonXHgEkHPEdVwPg"}
+{
+  "orgId": "team_XVYYzYpmrn9qBdyZcNJXpyce",
+  "projectId": "prj_PBcsOedSLeYfnonXHgEkHPEdVwPg",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
