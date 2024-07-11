@@ -6,6 +6,10 @@
   font-family: "Cormorant Garamond", serif;
   src: url("./assets/fonts/CormorantGaramond-Regular.ttf");
 }
+@font-face {
+  font-family: "Merriweather", serif;
+  src: url("./assets/fonts/Merriweather-Regular.ttf");
+}
 .first {
   min-height: 100vh;
   background: url("./assets/bg.png") no-repeat;
