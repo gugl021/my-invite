@@ -62,7 +62,7 @@ function App() {
           <div className={"first"}>
             <div className={"center column greet"}>
               <h2 className={"color-cornsilk black-shadow Merriweather"}>
-                {gender} {name}
+                {gender} {name},
               </h2>
               <div className={"center sub-greet color-cornsilk black-shadow Merriweather "}>
                 <span className={"Merriweather"}>
