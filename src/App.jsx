@@ -8,11 +8,11 @@ import { start } from "./pettles.js";
 
 function App() {
   useEffect(() => start(), []);
-  const name = spisak[location.hash.substring(2)]?.name;
-  const gender = spisak[location.hash.substring(2)]?.gender;
-  const isEnglish = Boolean(spisak[location.hash.substring(2)]?.english);
-  const isSpanish = Boolean(spisak[location.hash.substring(2)]?.spanish);
-  const isPlural = Boolean(spisak[location.hash.substring(2)]?.plural);
+  const name = spisak[location.pathname.substring(1)]?.name;
+  const gender = spisak[location.pathname.substring(1)]?.gender;
+  const isEnglish = Boolean(spisak[location.pathname.substring(1)]?.english);
+  const isSpanish = Boolean(spisak[location.pathname.substring(1)]?.spanish);
+  const isPlural = Boolean(spisak[location.pathname.substring(1)]?.plural);
   const [data, setData] = React.useState(null);
   const [tempRSVP, setTempRSVP] = React.useState(null);
   //eslint-disable-next-line no-unused-vars
@@ -28,7 +28,7 @@ function App() {
       req.open("PUT", "https://api.jsonbin.io/v3/b/668d00e6ad19ca34f88505b6", true);
       req.setRequestHeader("Content-Type", "application/json");
       req.setRequestHeader("X-Master-Key", "$2a$10$Pu6vPXlvxXKLNX5C0gfLge5IRH9WHFnj3gm0DuXnvpiFgDF.mKVk2");
-      req.send(JSON.stringify({ ...data, [location.hash.substring(2)]: value }));
+      req.send(JSON.stringify({ ...data, [location.pathname.substring(1)]: value }));
     },
     [data]
   );
@@ -96,9 +96,9 @@ function App() {
                 <div>
                   <input
                     onChange={async (event) => {
-                      if (event.target.checked && data?.[location.hash.substring(2)] !== "da") {
+                      if (event.target.checked && data?.[location.pathname.substring(1)] !== "da") {
                         setTempRSVP("da");
-                        setData({ ...data, [location.hash.substring(2)]: "da" });
+                        setData({ ...data, [location.pathname.substring(1)]: "da" });
                         await post("da");
                         return fetchData();
                       }
@@ -107,7 +107,7 @@ function App() {
                     id="da"
                     name="drone"
                     value="da"
-                    checked={tempRSVP === "da" ? true : data?.[location.hash.substring(2)] === "da"}
+                    checked={tempRSVP === "da" ? true : data?.[location.pathname.substring(1)] === "da"}
                   />
                   <label className={"Merriweather"} htmlFor="da">
                     {isEnglish ? "Yes" : isSpanish ? "Si" : "Da"}
@@ -116,9 +116,9 @@ function App() {
                 <div>
                   <input
                     onChange={async (event) => {
-                      if (event.target.checked && data?.[location.hash.substring(2)] !== "neodlučeni") {
+                      if (event.target.checked && data?.[location.pathname.substring(1)] !== "neodlučeni") {
                         setTempRSVP("neodlučeni");
-                        setData({ ...data, [location.hash.substring(2)]: "neodlučeni" });
+                        setData({ ...data, [location.pathname.substring(1)]: "neodlučeni" });
                         await post("neodlučeni");
                         return fetchData();
                       }
@@ -127,7 +127,7 @@ function App() {
                     id="neodlučeni"
                     name="drone"
                     value="neodlučeni"
-                    checked={tempRSVP === "neodlučeni" ? true : data?.[location.hash.substring(2)] === "neodlučeni"}
+                    checked={tempRSVP === "neodlučeni" ? true : data?.[location.pathname.substring(1)] === "neodlučeni"}
                   />
                   <label className={"Merriweather"} htmlFor="neodlučeni">
                     {isEnglish ? "Undecided" : isSpanish ? "indeciso" : isPlural ? "Neodlučeni" : "Neodlučen"}
@@ -136,9 +136,9 @@ function App() {
                 <div>
                   <input
                     onChange={async (event) => {
-                      if (event.target.checked && data?.[location.hash.substring(2)] !== "ne") {
+                      if (event.target.checked && data?.[location.pathname.substring(1)] !== "ne") {
                         setTempRSVP("ne");
-                        setData({ ...data, [location.hash.substring(2)]: "ne" });
+                        setData({ ...data, [location.pathname.substring(1)]: "ne" });
                         await post("ne");
                         return fetchData();
                       }
@@ -147,7 +147,7 @@ function App() {
                     id="ne"
                     name="drone"
                     value="ne"
-                    checked={tempRSVP === "ne" ? true : data?.[location.hash.substring(2)] === "ne"}
+                    checked={tempRSVP === "ne" ? true : data?.[location.pathname.substring(1)] === "ne"}
                   />
                   <label className={"Merriweather"} htmlFor="ne">
                     {isEnglish ? "No" : isSpanish ? "No" : "Ne"}
