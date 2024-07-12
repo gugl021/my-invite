@@ -7,7 +7,7 @@
   src: url("./assets/fonts/CormorantGaramond-Regular.ttf");
 }
 @font-face {
-  font-family: "Merriweather", serif;
+  font-family: Merriweather;
   src: url("./assets/fonts/Merriweather-Regular.ttf");
 }
 .first {
