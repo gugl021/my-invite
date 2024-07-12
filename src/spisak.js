@@ -25,7 +25,7 @@ export const spisak = {
   },
   SnezanaINikola: {
     gender: "Dragi",
-    path: "/Nikola",
+    path: "/SnezanaINikola",
     name: "Mama i Tata",
     plural: true,
   },
