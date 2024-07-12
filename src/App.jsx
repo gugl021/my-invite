@@ -3,6 +3,7 @@ import "./main.css";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import { spisak } from "./spisak.js";
 import { start } from "./pettles.js";
+import "@fontsource/merriweather";
 
 ("use strict");
 

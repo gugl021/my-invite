@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/merriweather": "^5.0.13",
     "@vercel/blob": "^0.23.4",
     "@vis.gl/react-google-maps": "^1.1.0",
     "express": "^4.19.2",
