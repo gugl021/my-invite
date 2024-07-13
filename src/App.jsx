@@ -86,8 +86,9 @@ function App() {
               <span>Petrovaradinska tvrđava, Atelje 21</span>
             </div>
             <div className={"center column color-cornsilk black-shadow Merriweather time"}>
-              <span>Okupljanje gostiju u 16h</span>
-              <span>Čin sklapanja braka u 17:30</span>
+              <span>{isEnglish ? "Guest arrival and gathering at 4:00 PM" : isSpanish ? "Reunión de invitados a las 16 h" : "Okupljanje gostiju u 16h"}</span>
+              <span>{isEnglish ? "Wedding ceremony at 5:30 PM" : isSpanish ? "Ceremonia de la boda" : "Čin sklapanja braka u 17:30"}</span>
+              <span></span>
             </div>
             <div className={"column rsvp-wrapper"}>
               <h3 className={"center color-cornsilk black-shadow Merriweather"}>
