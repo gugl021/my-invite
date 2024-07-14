@@ -68,7 +68,7 @@ function App() {
               <div className={"center sub-greet color-cornsilk black-shadow Merriweather "}>
                 <span className={"Merriweather"}>
                   {isEnglish
-                    ? "We happily invite you to out wedding."
+                    ? "We happily invite you to our wedding."
                     : isSpanish
                       ? "nos complace invitarlos a nuestra boda."
                       : `Sa radošću ${isPlural ? "vas" : "te"} pozivamo da ${isPlural ? "prisustvujete" : "prisustvuješ"} našem venčanju.`}
