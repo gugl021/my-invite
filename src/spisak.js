@@ -192,6 +192,11 @@ export const spisak = {
     path: "/Goca",
     name: "Goco",
   },
+  Niksa: {
+    gender: "Dragi",
+    path: "/Niksa",
+    name: "Nikša",
+  },
   Dzudo: {
     gender: "Dragi",
     path: "/Dzudo",
