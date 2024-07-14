@@ -29,6 +29,11 @@ export const spisak = {
     name: "Mama i Tata",
     plural: true,
   },
+  Ana: {
+    gender: "Draga",
+    path: "/Ana",
+    name: "Ana",
+  },
   MilicaMilicevic: {
     gender: "Draga",
     path: "/MilicaMilicevic",
