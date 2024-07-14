@@ -142,10 +142,11 @@ export const spisak = {
     path: "/Ivana",
     name: "Ivana",
   },
-  Miske: {
+  VasilisaIMiske: {
     gender: "Dragi",
-    path: "/Miske",
-    name: "Miške",
+    path: "/VasilisaIMiske",
+    name: "Vasilisa i Miške",
+    plural: true,
   },
   Darinka: {
     gender: "Draga",
