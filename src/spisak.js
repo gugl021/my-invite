@@ -1,7 +1,7 @@
 export const spisak = {
   KacaIFilip: {
     gender: "Dragi",
-    path: "/Kaca",
+    path: "/KacaIFilip",
     name: "Katarina i Filipe",
     plural: true,
   },
