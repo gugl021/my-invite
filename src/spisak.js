@@ -187,11 +187,10 @@ export const spisak = {
     name: "Saro i Gorane",
     plural: true,
   },
-  GocaIGoran: {
-    gender: "Dragi",
-    path: "/GocaIGoran",
-    name: "Goco i Gorane",
-    plural: true,
+  Goca: {
+    gender: "Draga",
+    path: "/Goca",
+    name: "Goco",
   },
   Dzudo: {
     gender: "Dragi",

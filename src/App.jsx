@@ -92,7 +92,11 @@ function App() {
             </div>
             <div className={"column rsvp-wrapper"}>
               <h3 className={"center color-cornsilk black-shadow Merriweather"}>
-                {isEnglish ? "Please RSVP" : isSpanish ? "Por favor RSVP" : `Molimo vas da ${isPlural ? "potvrdite" : "potvrdiš"} dolazak do 10. avgusta`}
+                {isEnglish
+                  ? "Please RSVP"
+                  : isSpanish
+                    ? "Por favor RSVP"
+                    : `Molimo ${isPlural ? "vas" : "te"} da ${isPlural ? "potvrdite" : "potvrdiš"} dolazak do 10. avgusta`}
               </h3>
               <div className={"row rsvp"}>
                 <div>
