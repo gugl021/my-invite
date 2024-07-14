@@ -7,7 +7,7 @@ import "@fontsource/merriweather";
 
 ("use strict");
 
-function App() {
+function FirstInvitation() {
   useEffect(() => start(), []);
   const name = spisak[location.pathname.substring(1)]?.name;
   const gender = spisak[location.pathname.substring(1)]?.gender;
@@ -179,4 +179,4 @@ function App() {
   );
 }
 
-export default App;
+export default FirstInvitation;
