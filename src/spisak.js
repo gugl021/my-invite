@@ -57,15 +57,10 @@ export const spisak = {
     name: "Milice i Dario",
     plural: true,
   },
-  Jelena: {
+  JelenaIMihajlo: {
     gender: "Draga",
-    path: "/Jelena",
-    name: "Jelena",
-  },
-  Mihajlo: {
-    gender: "Dragi",
-    path: "/Mihajlo",
-    name: "Mihajlo",
+    path: "/JelenaIMihajlo",
+    name: "Jelena i Mihajlo",
   },
   VesnaIDusan: {
     gender: "Dragi",
