@@ -103,7 +103,7 @@ export const spisak = {
   Dragica: {
     gender: "Draga",
     path: "/Dragica",
-    name: "Dragica",
+    name: "Dragice",
   },
   JoleINidza: {
     gender: "Dragi",
