@@ -170,16 +170,16 @@ export const spisak = {
     name: "Dunja and Josh",
     english: true,
   },
-  NikolaKrneta: {
+  AnaINikola: {
     gender: "Dragi",
-    path: "/NikolaKrneta",
-    name: "Nikola",
+    path: "/AnaINikola",
+    name: "Ana i Nikola",
     plural: true,
   },
-  GoranKrneta: {
+  SaraIGoran: {
     gender: "Dragi",
-    path: "/GoranKrneta",
-    name: "Gorane",
+    path: "/SaraIGoran",
+    name: "Saro i Gorane",
     plural: true,
   },
   GocaIGoran: {
