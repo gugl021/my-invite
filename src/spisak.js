@@ -221,20 +221,24 @@ export const spisak = {
     gender: "Dragi",
     path: "/TamaraIAco",
     name: "Tamara I Aco",
+    plural: true,
   },
   ZdravkoIMica: {
     gender: "Dragi",
     path: "/ZdravkoIMica",
     name: "Zdravko i Mico",
+    plural: true,
   },
   MrkiIMilena: {
     gender: "Dragi",
     path: "/MrkiIMilena",
     name: "Božidare i Milena",
+    plural: true,
   },
   ZoranINada: {
     gender: "Dragi",
     path: "/ZoranINada",
     name: "Zorane I Nado",
+    plural: true,
   },
 };
