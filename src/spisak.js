@@ -251,4 +251,44 @@ export const spisak = {
     name: "Zorane I Nado",
     plural: true,
   },
+  Sladja: {
+    gender: "Draga",
+    path: "/Sladja",
+    name: "Slađo",
+  },
+  Sonja: {
+    gender: "Draga",
+    path: "/Sonja",
+    name: "Sonja",
+  },
+  Dubravka: {
+    gender: "Draga",
+    path: "/Dubravka",
+    name: "Dubravka",
+  },
+  Ruzica: {
+    gender: "Draga",
+    path: "/Ruzica",
+    name: "Ružice",
+  },
+  Jasna: {
+    gender: "Draga",
+    path: "/Jasna",
+    name: "Jasna",
+  },
+  MilicaMijatov: {
+    gender: "Draga",
+    path: "/MilicaMijatov",
+    name: "Milice",
+  },
+  Milanka: {
+    gender: "Draga",
+    path: "/Milanka",
+    name: "Milanka",
+  },
+  Sanja: {
+    gender: "Draga",
+    path: "/Sanja",
+    name: "Sanja",
+  },
 };
