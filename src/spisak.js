@@ -192,10 +192,10 @@ export const spisak = {
     path: "/Goca",
     name: "Goco",
   },
-  Niksa: {
+  VanjaINiksa: {
     gender: "Dragi",
-    path: "/Niksa",
-    name: "Nikša",
+    path: "/VanjaINiksa",
+    name: "Vanja i Nikša",
   },
   Dzudo: {
     gender: "Dragi",
