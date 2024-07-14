@@ -196,6 +196,7 @@ export const spisak = {
     gender: "Dragi",
     path: "/VanjaINiksa",
     name: "Vanja i Nikša",
+    plural: true,
   },
   Dzudo: {
     gender: "Dragi",
