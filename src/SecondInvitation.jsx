@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./main.css";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
-import { spisak } from "./spisak.js";
+import { spisak2 } from "./spisak2.js";
 import { start } from "./pettles.js";
 import "@fontsource/merriweather";
 
@@ -9,11 +9,11 @@ import "@fontsource/merriweather";
 
 function SecondInvitation() {
   useEffect(() => start(), []);
-  const name = spisak[location.pathname.substring(7)]?.name;
-  const gender = spisak[location.pathname.substring(7)]?.gender;
-  const isEnglish = Boolean(spisak[location.pathname.substring(7)]?.english);
-  const isSpanish = Boolean(spisak[location.pathname.substring(7)]?.spanish);
-  const isPlural = Boolean(spisak[location.pathname.substring(7)]?.plural);
+  const name = spisak2[location.pathname.substring(7)]?.name;
+  const gender = spisak2[location.pathname.substring(7)]?.gender;
+  const isEnglish = Boolean(spisak2[location.pathname.substring(7)]?.english);
+  const isSpanish = Boolean(spisak2[location.pathname.substring(7)]?.spanish);
+  const isPlural = Boolean(spisak2[location.pathname.substring(7)]?.plural);
   const [data, setData] = React.useState(null);
   const [tempRSVP, setTempRSVP] = React.useState(null);
   //eslint-disable-next-line no-unused-vars
