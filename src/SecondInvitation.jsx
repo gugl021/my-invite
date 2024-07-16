@@ -68,7 +68,7 @@ function SecondInvitation() {
               <div className={"center sub-greet color-cornsilk black-shadow Merriweather "}>
                 <span className={"Merriweather"}>
                   {isEnglish
-                    ? "We happily invite you to our wedding."
+                    ? "We happily invite you to our wedding-themed party."
                     : isSpanish
                       ? "nos complace invitarlos a nuestra boda."
                       : `Sa radošću ${isPlural ? "vas" : "te"} pozivamo na svadbenu žurku.`}
