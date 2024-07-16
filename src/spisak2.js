@@ -5,10 +5,10 @@ export const spisak2 = {
     name: "Katarina i Filipe",
     plural: true,
   },
-  Milica: {
-    gender: "Draga",
-    path: "/zurka/Milica",
-    name: "Milice",
+  MilicaIDrazen: {
+    gender: "Dragi",
+    path: "/zurka/MilicaIDrazen",
+    name: "Milice i Dražene",
   },
   JovanaINidza: {
     gender: "Dragi",
