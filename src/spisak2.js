@@ -18,8 +18,8 @@ export const spisak2 = {
   },
   GagaAndChase: {
     gender: "Dear",
-    path: "/zurka/GaganAndChase",
-    name: "Gagan and Chase",
+    path: "/zurka/GagaAndChase",
+    name: "Gaga and Chase",
     plural: true,
     english: true,
   },
