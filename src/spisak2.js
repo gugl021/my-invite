@@ -76,6 +76,9 @@ export const spisak2 = {
   },
   ValentinaIDamir: {
     plural: true,
+    path: "/zurka/ValentinaIDamir",
+    name: "Valentina i Damire",
+    gender: "Dragi",
   },
   Zoran: {
     gender: "Dragi",
