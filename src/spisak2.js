@@ -260,7 +260,6 @@ export const spisak2 = {
     gender: "Dragi",
     path: "/zurka/NikolaRokvic",
     name: "Nikola",
-    spanish: true,
   },
   NevenaISvetozar: {
     gender: "Dragi",
