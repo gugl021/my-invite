@@ -52,7 +52,7 @@ export const spisak2 = {
     path: "/zurka/Kljaja",
     name: "Aleksandra",
   },
-  AnaIPatak: {
+  AnaIVladan: {
     gender: "Dragi",
     path: "/zurka/AnaIVladan",
     name: "Ana i Vladane",
