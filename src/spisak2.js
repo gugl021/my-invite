@@ -239,7 +239,11 @@ export const spisak2 = {
     path: "/zurka/Fiki",
     name: "Filipe",
   },
-  Panov: {},
+  Ivan: {
+    gender: "Dragi",
+    path: "/zurka/Ivan",
+    name: "Ivane",
+  },
   // Danilo: {},
   // Bilja: {},
   Micko: {
