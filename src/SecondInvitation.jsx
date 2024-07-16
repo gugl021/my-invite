@@ -79,9 +79,9 @@ function SecondInvitation() {
             <div className={"names-wrapper"}>
               <h2 className={"names color-cornsilk black-shadow second-names"}>Aleksandra & Goran</h2>
             </div>
-            <div className={"center column color-cornsilk black-shadow Merriweather uppercase date-light"}>
+            <div className={"center column color-cornsilk black-shadow Merriweather uppercase date-light-second"}>
               <span>Subota, 14. septembar 2024.</span>
-              <span>Fruška151, Stražilovački put 151, Sremski Karlovci 21205</span>
+              <span>Fruška151, Stražilovački put 151, Sremski Karlovci, 18h</span>
             </div>
 
             <div className={"column rsvp-wrapper"}>

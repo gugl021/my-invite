@@ -103,6 +103,11 @@ h3 {
   font-weight: 400;
   padding-top: 10px;
 }
+.date-light-second {
+  font-size: 1.1em;
+  font-weight: 400;
+  padding-top: 10px;
+}
 .uppercase {
   text-transform: uppercase;
 }
