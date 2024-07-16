@@ -211,7 +211,11 @@ export const spisak2 = {
   // Sneza: {},
   // Musa: {},
   // Viktor: {},
-  Trobok: {},
+  Bojan: {
+    gender: "Dragi",
+    path: "/zurka/Bojan",
+    name: "Bojane",
+  },
   TeodoraILjubisa: {
     gender: "Dragi",
     path: "/zurka/TeodoraILjubisa",
