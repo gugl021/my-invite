@@ -287,4 +287,14 @@ export const spisak2 = {
     path: "/zurka/Adri",
     name: "Adri",
   },
+  Maka: {
+    gender: "Draga",
+    path: "/zurka/Maka",
+    name: "Maka",
+  },
+  Milan: {
+    gender: "Draga",
+    path: "/zurka/Milan",
+    name: "Milane",
+  },
 };
