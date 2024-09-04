@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./main.css";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import { spisak } from "./spisak.js";
-import { start } from "./pettles.js";
+// import { start } from "./pettles.js";
 import "@fontsource/merriweather";
 
 ("use strict");
 
 function FirstInvitation() {
-  useEffect(() => start(), []);
+  // useEffect(() => start(), []);
   const name = spisak[location.pathname.substring(1)]?.name;
   const gender = spisak[location.pathname.substring(1)]?.gender;
+  const isFemale = Boolean(spisak[location.pathname.substring(1)]?.female);
   const isEnglish = Boolean(spisak[location.pathname.substring(1)]?.english);
   const isSpanish = Boolean(spisak[location.pathname.substring(1)]?.spanish);
   const isPlural = Boolean(spisak[location.pathname.substring(1)]?.plural);
@@ -68,20 +69,23 @@ function FirstInvitation() {
               <div className={"center sub-greet color-cornsilk black-shadow Merriweather "}>
                 <span className={"Merriweather"}>
                   {isEnglish
-                    ? "We happily invite you to our wedding."
+                    ? "Thank you for coming to out wedding"
                     : isSpanish
                       ? "nos complace invitarlos a nuestra boda."
-                      : `Sa radošću ${isPlural ? "vas" : "te"} pozivamo da ${isPlural ? "prisustvujete" : "prisustvuješ"} našem venčanju.`}
+                      : `Hvala ${isPlural ? "vam" : "ti"} što ${isPlural ? "ste" : "si"} ${isPlural ? "prisustvovali" : isFemale ? "prisustvovala" : "prisustvovao"} našem venčanju.`}
                 </span>
+              </div>
+              <div className={"center sub-greet color-cornsilk black-shadow Merriweather "}>
+                <span className={"Merriweather"}>Galerija sa slikama stiže uskoro.</span>
               </div>
             </div>
 
-            <div className={"names-wrapper"}>
+            {/* <div className={"names-wrapper"}>
               <h2 className={"names color-cornsilk black-shadow"}>Aleksandra</h2>
               <h2 className={"names color-cornsilk black-shadow"}>&</h2>
               <h2 className={"names color-cornsilk black-shadow"}>Goran</h2>
-            </div>
-            <div className={"center column color-cornsilk black-shadow Merriweather uppercase date-light"}>
+            </div>*/}
+            {/*<div className={"center column color-cornsilk black-shadow Merriweather uppercase date-light"}>
               <span>Subota, 31. avgust 2024.</span>
               <span>Petrovaradinska tvrđava, Atelje 21</span>
             </div>
@@ -89,82 +93,82 @@ function FirstInvitation() {
               <span>{isEnglish ? "Guest arrival and gathering at 4:00 PM" : isSpanish ? "Reunión de invitados a las 16 h" : "Okupljanje gostiju u 16h"}</span>
               <span>{isEnglish ? "Wedding ceremony at 5:30 PM" : isSpanish ? "Ceremonia de la boda" : "Čin sklapanja braka u 17:30"}</span>
               <span></span>
-            </div>
-            <div className={"column rsvp-wrapper"}>
-              <h3 className={"center color-cornsilk black-shadow Merriweather"}>
-                {isEnglish
-                  ? "Please RSVP"
-                  : isSpanish
-                    ? "Por favor RSVP"
-                    : `Molimo ${isPlural ? "vas" : "te"} da ${isPlural ? "potvrdite" : "potvrdiš"} dolazak do 10. avgusta`}
-              </h3>
-              {data ? (
-                <div className={"row rsvp"}>
-                  <div>
-                    <input
-                      onChange={async (event) => {
-                        if (event.target.checked && data?.[location.pathname.substring(1)] !== "da") {
-                          setTempRSVP("da");
-                          setData({ ...data, [location.pathname.substring(1)]: "da" });
-                          await post("da");
-                          return fetchData();
-                        }
-                      }}
-                      type="radio"
-                      id="da"
-                      name="drone"
-                      value="da"
-                      checked={tempRSVP === "da" ? true : data?.[location.pathname.substring(1)] === "da"}
-                    />
-                    <label className={"Merriweather"} htmlFor="da">
-                      {isEnglish ? "Yes" : isSpanish ? "Si" : "Da"}
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      onChange={async (event) => {
-                        if (event.target.checked && data?.[location.pathname.substring(1)] !== "neodlučeni") {
-                          setTempRSVP("neodlučeni");
-                          setData({ ...data, [location.pathname.substring(1)]: "neodlučeni" });
-                          await post("neodlučeni");
-                          return fetchData();
-                        }
-                      }}
-                      type="radio"
-                      id="neodlučeni"
-                      name="drone"
-                      value="neodlučeni"
-                      checked={tempRSVP === "neodlučeni" ? true : data?.[location.pathname.substring(1)] === "neodlučeni"}
-                    />
-                    <label className={"Merriweather"} htmlFor="neodlučeni">
-                      {isEnglish ? "Maybe" : isSpanish ? "Quizás" : "Možda"}
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      onChange={async (event) => {
-                        if (event.target.checked && data?.[location.pathname.substring(1)] !== "ne") {
-                          setTempRSVP("ne");
-                          setData({ ...data, [location.pathname.substring(1)]: "ne" });
-                          await post("ne");
-                          return fetchData();
-                        }
-                      }}
-                      type="radio"
-                      id="ne"
-                      name="drone"
-                      value="ne"
-                      checked={tempRSVP === "ne" ? true : data?.[location.pathname.substring(1)] === "ne"}
-                    />
-                    <label className={"Merriweather"} htmlFor="ne">
-                      {isEnglish ? "No" : isSpanish ? "No" : "Ne"}
-                    </label>
-                  </div>
-                </div>
-              ) : null}
-            </div>
+            </div>*/}
+            {/*<div className={"column rsvp-wrapper"}>*/}
+            {/*  <h3 className={"center color-cornsilk black-shadow Merriweather"}>*/}
+            {/*    {isEnglish*/}
+            {/*      ? "Please RSVP"*/}
+            {/*      : isSpanish*/}
+            {/*        ? "Por favor RSVP"*/}
+            {/*        : `Molimo ${isPlural ? "vas" : "te"} da ${isPlural ? "potvrdite" : "potvrdiš"} dolazak do 10. avgusta`}*/}
+            {/*  </h3>*/}
+            {/*  {data ? (*/}
+            {/*    <div className={"row rsvp"}>*/}
+            {/*      <div>*/}
+            {/*        <input*/}
+            {/*          onChange={async (event) => {*/}
+            {/*            if (event.target.checked && data?.[location.pathname.substring(1)] !== "da") {*/}
+            {/*              setTempRSVP("da");*/}
+            {/*              setData({ ...data, [location.pathname.substring(1)]: "da" });*/}
+            {/*              await post("da");*/}
+            {/*              return fetchData();*/}
+            {/*            }*/}
+            {/*          }}*/}
+            {/*          type="radio"*/}
+            {/*          id="da"*/}
+            {/*          name="drone"*/}
+            {/*          value="da"*/}
+            {/*          checked={tempRSVP === "da" ? true : data?.[location.pathname.substring(1)] === "da"}*/}
+            {/*        />*/}
+            {/*        <label className={"Merriweather"} htmlFor="da">*/}
+            {/*          {isEnglish ? "Yes" : isSpanish ? "Si" : "Da"}*/}
+            {/*        </label>*/}
+            {/*      </div>*/}
+            {/*      <div>*/}
+            {/*        <input*/}
+            {/*          onChange={async (event) => {*/}
+            {/*            if (event.target.checked && data?.[location.pathname.substring(1)] !== "neodlučeni") {*/}
+            {/*              setTempRSVP("neodlučeni");*/}
+            {/*              setData({ ...data, [location.pathname.substring(1)]: "neodlučeni" });*/}
+            {/*              await post("neodlučeni");*/}
+            {/*              return fetchData();*/}
+            {/*            }*/}
+            {/*          }}*/}
+            {/*          type="radio"*/}
+            {/*          id="neodlučeni"*/}
+            {/*          name="drone"*/}
+            {/*          value="neodlučeni"*/}
+            {/*          checked={tempRSVP === "neodlučeni" ? true : data?.[location.pathname.substring(1)] === "neodlučeni"}*/}
+            {/*        />*/}
+            {/*        <label className={"Merriweather"} htmlFor="neodlučeni">*/}
+            {/*          {isEnglish ? "Maybe" : isSpanish ? "Quizás" : "Možda"}*/}
+            {/*        </label>*/}
+            {/*      </div>*/}
+            {/*      <div>*/}
+            {/*        <input*/}
+            {/*          onChange={async (event) => {*/}
+            {/*            if (event.target.checked && data?.[location.pathname.substring(1)] !== "ne") {*/}
+            {/*              setTempRSVP("ne");*/}
+            {/*              setData({ ...data, [location.pathname.substring(1)]: "ne" });*/}
+            {/*              await post("ne");*/}
+            {/*              return fetchData();*/}
+            {/*            }*/}
+            {/*          }}*/}
+            {/*          type="radio"*/}
+            {/*          id="ne"*/}
+            {/*          name="drone"*/}
+            {/*          value="ne"*/}
+            {/*          checked={tempRSVP === "ne" ? true : data?.[location.pathname.substring(1)] === "ne"}*/}
+            {/*        />*/}
+            {/*        <label className={"Merriweather"} htmlFor="ne">*/}
+            {/*          {isEnglish ? "No" : isSpanish ? "No" : "Ne"}*/}
+            {/*        </label>*/}
+            {/*      </div>*/}
+            {/*    </div>*/}
+            {/*  ) : null}*/}
+            {/*</div>*/}
           </div>
-          <div className={"map"}>
+          {/*<div className={"map"}>
             <Map
               style={{ width: "100%", height: "300px" }}
               defaultCenter={{ lat: 45.2497041, lng: 19.8677662 }}
@@ -173,7 +177,7 @@ function FirstInvitation() {
               disableDefaultUI={true}>
               <Marker onClick={() => window.open("https://maps.app.goo.gl/whn5pmcSryLUrjC59")} position={{ lat: 45.249519, lng: 19.869372 }} />
             </Map>
-          </div>
+          </div>*/}
         </div>
       </APIProvider>
     </>

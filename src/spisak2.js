@@ -9,6 +9,7 @@ export const spisak2 = {
     gender: "Dragi",
     path: "/zurka/MilicaIDrazen",
     name: "Milice i Dražene",
+    plural: true,
   },
   JovanaINidza: {
     gender: "Dragi",

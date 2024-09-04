@@ -16,6 +16,7 @@ export const spisak = {
     gender: "Dragi",
     path: "/Luka",
     name: "Luka",
+    female: false,
   },
   VeraIBraca: {
     gender: "Dragi",
@@ -33,11 +34,13 @@ export const spisak = {
     gender: "Draga",
     path: "/Ana",
     name: "Ana",
+    female: true,
   },
   MilicaMilicevic: {
     gender: "Draga",
     path: "/MilicaMilicevic",
     name: "Milice",
+    female: true,
   },
   BabaIDeda: {
     gender: "Dragi",
@@ -66,6 +69,7 @@ export const spisak = {
     gender: "Draga",
     path: "/JelenaIMihajlo",
     name: "Jelena i Mihajlo",
+    plural: true,
   },
   VesnaIDusan: {
     gender: "Dragi",
@@ -83,6 +87,7 @@ export const spisak = {
     gender: "Draga",
     path: "/Marija",
     name: "Marija",
+    female: true,
   },
   MiraIZoran: {
     gender: "Dragi",
@@ -94,6 +99,7 @@ export const spisak = {
     gender: "Draga",
     path: "/Jana",
     name: "Jano",
+    female: true,
   },
   Miroslav: {
     gender: "Dragi",
@@ -141,6 +147,7 @@ export const spisak = {
     gender: "Draga",
     path: "/Ivana",
     name: "Ivana",
+    female: true,
   },
   VasilisaIMiske: {
     gender: "Dragi",
@@ -152,6 +159,7 @@ export const spisak = {
     gender: "Draga",
     path: "/Darinka",
     name: "Darinka",
+    female: true,
   },
   SladjaIStrahinja: {
     gender: "Dragi",
@@ -192,6 +200,7 @@ export const spisak = {
     gender: "Draga",
     path: "/Goca",
     name: "Goco",
+    female: true,
   },
   VanjaINiksa: {
     gender: "Dragi",
@@ -256,41 +265,49 @@ export const spisak = {
     gender: "Draga",
     path: "/Sladja",
     name: "Slađo",
+    female: true,
   },
   Sonja: {
     gender: "Draga",
     path: "/Sonja",
     name: "Sonja",
+    female: true,
   },
   Dubravka: {
     gender: "Draga",
     path: "/Dubravka",
     name: "Dubravka",
+    female: true,
   },
   Ruzica: {
     gender: "Draga",
     path: "/Ruzica",
     name: "Ružice",
+    female: true,
   },
   Jasna: {
     gender: "Draga",
     path: "/Jasna",
     name: "Jasna",
+    female: true,
   },
   MilicaMijatov: {
     gender: "Draga",
     path: "/MilicaMijatov",
     name: "Milice",
+    female: true,
   },
   Milanka: {
     gender: "Draga",
     path: "/Milanka",
     name: "Milanka",
+    female: true,
   },
   Sanja: {
     gender: "Draga",
     path: "/Sanja",
     name: "Sanja",
+    female: true,
   },
   SanjaIDragan: {
     plural: true,
@@ -344,6 +361,7 @@ export const spisak = {
     gender: "Draga",
     path: "/Ljilja",
     name: "Ljiljo",
+    female: true,
   },
   MarijaILuka: {
     plural: true,
