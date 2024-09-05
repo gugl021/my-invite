@@ -59,8 +59,8 @@ function SecondInvitation() {
   return (
     <>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-        <div className={"green-wrapper column"}>
-          <div className={"first"}>
+        <div className={"green-wrapper-second column"}>
+          <div className={"first-second"}>
             <div className={"center column greet second"}>
               <h2 className={"color-cornsilk black-shadow Merriweather"}>
                 {gender} {name},
