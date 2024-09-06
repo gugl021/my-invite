@@ -221,8 +221,21 @@ export const spisak2 = {
     plural: true,
   },
   // JovanaiBaki: {},
-  // Sneza: {},
-  // Musa: {},
+  Sneza: {
+    gender: "Draga",
+    path: "/zurka/Sneza",
+    name: "Snežo",
+  },
+  Maja: {
+    gender: "Draga",
+    path: "/zurka/Maja",
+    name: "Maja",
+  },
+  Ivke: {
+    gender: "Dragi",
+    path: "/zurka/Ivke",
+    name: "Ivke",
+  },
   // Viktor: {},
   Bojan: {
     gender: "Dragi",
