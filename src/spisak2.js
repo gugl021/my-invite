@@ -5,6 +5,12 @@ export const spisak2 = {
     name: "Katarina i Filipe",
     plural: true,
   },
+  VladanaIIvan: {
+    gender: "Dragi",
+    path: "/zurka/VladanaIIvan",
+    name: "Vladana i Ivane",
+    plural: true,
+  },
   MilicaIDrazen: {
     gender: "Dragi",
     path: "/zurka/MilicaIDrazen",
@@ -236,7 +242,11 @@ export const spisak2 = {
     path: "/zurka/Ivke",
     name: "Ivke",
   },
-  // Viktor: {},
+  Viktor: {
+    gender: "Dragi",
+    path: "/zurka/Viktor",
+    name: "Viktore",
+  },
   Bojan: {
     gender: "Dragi",
     path: "/zurka/Bojan",

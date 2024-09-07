@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./main.css";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import { spisak } from "./spisak.js";
@@ -8,7 +8,10 @@ import "@fontsource/merriweather";
 ("use strict");
 
 function FirstInvitation() {
-  // useEffect(() => start(), []);
+  useEffect(() => {
+    // start();
+    document.title = "Hvala";
+  }, []);
   const name = spisak[location.pathname.substring(1)]?.name;
   const gender = spisak[location.pathname.substring(1)]?.gender;
   const isFemale = Boolean(spisak[location.pathname.substring(1)]?.female);
@@ -16,24 +19,24 @@ function FirstInvitation() {
   const isSpanish = Boolean(spisak[location.pathname.substring(1)]?.spanish);
   const isPlural = Boolean(spisak[location.pathname.substring(1)]?.plural);
   const [data, setData] = React.useState(null);
-  const [tempRSVP, setTempRSVP] = React.useState(null);
+  // const [tempRSVP, setTempRSVP] = React.useState(null);
   //eslint-disable-next-line no-unused-vars
   const [error, setError] = React.useState(null);
-  const post = React.useCallback(
+  /*const post = React.useCallback(
     async (value) => {
       let req = new XMLHttpRequest();
-      /*req.onreadystatechange = () => {
+      /!*req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {
           debugger;
         }
-      };*/
+      };*!/
       req.open("PUT", "https://api.jsonbin.io/v3/b/668d00e6ad19ca34f88505b6", true);
       req.setRequestHeader("Content-Type", "application/json");
       req.setRequestHeader("X-Master-Key", "$2a$10$Pu6vPXlvxXKLNX5C0gfLge5IRH9WHFnj3gm0DuXnvpiFgDF.mKVk2");
       req.send(JSON.stringify({ ...data, [location.pathname.substring(1)]: value }));
     },
     [data]
-  );
+  );*/
 
   const fetchData = React.useCallback(async () => {
     try {

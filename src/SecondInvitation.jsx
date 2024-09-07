@@ -8,7 +8,10 @@ import "@fontsource/merriweather";
 ("use strict");
 
 function SecondInvitation() {
-  useEffect(() => start(), []);
+  useEffect(() => {
+    start();
+    document.title = "Saška i Goran";
+  }, []);
   const name = spisak2[location.pathname.substring(7)]?.name;
   const gender = spisak2[location.pathname.substring(7)]?.gender;
   const isEnglish = Boolean(spisak2[location.pathname.substring(7)]?.english);
