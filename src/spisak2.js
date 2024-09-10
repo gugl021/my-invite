@@ -226,7 +226,12 @@ export const spisak2 = {
     name: "Marija i Borise",
     plural: true,
   },
-  // JovanaiBaki: {},
+  JovanaIDragan: {
+    gender: "Dragi",
+    path: "/zurka/JovanaIDragan",
+    name: "Jovana i Dragane",
+    plural: true,
+  },
   Sneza: {
     gender: "Draga",
     path: "/zurka/Sneza",
